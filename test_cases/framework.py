@@ -2,8 +2,10 @@ import os
 import unittest
 from selenium import webdriver
 
-DRIVER_PATH = (r"C:\\Users\\macie\\OneDrive\\Dokumenty\\GitHub\\repozytoriumMaciej\\utils\\../drivers\\chromedriver.exe")
+
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
+
+DRIVER_PATH = ('C:\TestFiles\chromedriver.exe')
 
 
 
@@ -12,7 +14,7 @@ class Test(unittest.TestCase):
     @classmethod
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
-        self.driver = webdriver.Chrome(executable_path=(r"C:\\Users\\macie\\OneDrive\\Dokumenty\\GitHub\\repozytoriumMaciej\\utils\\../drivers\\chromedriver.exe"))
+        self.driver = webdriver.Chrome(executable_path='C:\TestFiles\chromedriver.exe')
         self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
