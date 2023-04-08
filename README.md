@@ -3,7 +3,7 @@
 **Przepraszam, że wcześniej się nie rozpisałem, nie doczytałem tamtego zadania.**
   
 *Nazywam się Maciej. Mam 29 lat i od 1,5 roku pracuje jako tester funkcjonalny gier. Chciałbym nabyć umiejętności w zakresie automatyzacji testów i zbudować swoje repozytorium. W swojej pracy do tej pory wykorzystywałem jedynie testy manualne. Nie samymi grami człowiek żyje, więc chciałbym poszerzyć również swoją wiedzę z testowania innych rodzajów aplikacji. 
-Na co dzień lubie czytać powieści fantasy, historie kryminalne oraz bawić kotki oraz psy. W swoim domu mam kotkę Mimcie i psa Mikusie. 
+Na co dzień lubie czytać powieści fantasy, historie kryminalne. Jestem miłośnikem zarówno kotków, jak i psów. W swoim domu mam kotkę Mimcie i psa Mikusie. 
 Quiz ISTQB poszedł mi wyjątkowo dobrze, gdyż w 17 marca zdałem egzamin ISTQB.*
 
 
