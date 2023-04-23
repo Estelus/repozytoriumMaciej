@@ -3,6 +3,7 @@ from pages.base_page import BasePage
 
 class LoginPage(BasePage):
     login_field_xpath = "//*[@id='login']"
+<<<<<<< Updated upstream
     password_field_xpath = "//*[@id='password']"
     sign_in_button_xpath = "//*[text()= 'Sign in']"
     login_url = ("https://scouts-test.futbolkolektyw.pl/en/")
@@ -21,3 +22,13 @@ class LoginPage(BasePage):
 
     def title_of_the_page(self):
         assert self.get_page_title(self.login_url) == self.expected_title
+=======
+    password_field_xpath = "//*([@id='password-label'])"
+    sign_in_button_xpath = "//input[@type='submit']"
+    login_page_title = '//*[@class="title"]'
+
+    def type_in_email(self, email):
+        self.field_send_keys(self.login_field_xpath, email)
+    def title_of_page(self,title):
+        self.title_of_page(self.login_page_title, title)
+>>>>>>> Stashed changes
