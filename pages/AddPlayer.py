@@ -1,43 +1,54 @@
-# SUBTASK 4 NIESTETY NIE ZDAZYŁEM ZROBIĆ. ZAPOMNIAŁEM SIĘ I ZACZĄŁEM ROBIĆ ZADANIA DOPIERO WE WTOREK PO 20.00.
-# PRZEPRASZAM
-
-
-import os
 import time
-import unittest
-from selenium import webdriver
 
-from pages.dashboard import Dashboard
-from pages.login_page import LoginPage
-
-
-from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
-
+from pages.base_page import BasePage
 DRIVER_PATH = ('C:\TestFiles\chromedriver.exe')
+class AddAPlayer(BasePage):
+    main_page_xpath = "//*[text()='Main page']"
+    players_xpath = "//*[text()='Players']"
+    polski_xpath = "//*[text()='Polski']"
+    sign_out_xpath = "//*[text()='Sign out']"
+    email_xpath = "//*[@name='email']"
+    name_xpath = "//*[@name='name']"
+    surname_xpath = "//*[@name='surname']"
+    phone_xpath = "//*[@name='phone']"
+    weight_xpath = "//*[@name='weight']"
+    height_xpath = "//*[@name='height']"
+    age_xpath = "//*[@name='age']"
+    leg_xpath = "//*[@name='leg']"
+    club_xpath = "//*[@name='club']"
+    level_xpath = "//*[@name='level']"
+    main_position_xpath = "//*[@name='mainPosition']"
+    second_position_xpath = "//*[@name='secondPosition']"
+    achievements_xpath = "//*[@name='achievements']"
+    add_language_xpath = "//*[@aria-label='Add language']"
+    laczy_nas_pilka_xpath = "//*[@name='webLaczy']"
+    dziewiecdziesiat_minut_xpath = "//*[@name='web90']"
+    facebook_xpath = "//*[@name='webFB']"
+    add_link_to_youtube_xpath = "//*[text()='Add link to Youtube']"
+    submit_xpath = "//*[@type='submit']"
+    clear_xpath = "//*[text()='Clear']"
 
+    expected_title = "Add player"
+    add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
+    pass
+    def title_of_page(self):
+        time.sleep(4)
+        assert self.get_page_title(self.add_a_player_url) == self.expected_title
 
+    def type_in_name(self, name):
+        self.field_send_keys(self.name_xpath, name)
 
-class TestLogInPage(unittest.TestCase):
+    def type_in_surname(self, surname):
+        self.field_send_keys(self.surname_xpath, surname)
 
+    def type_in_age(self, age):
+        self.field_send_keys(self.age_xpath, age)
 
-    @classmethod
-    def setUp(self):
-        os.chmod(DRIVER_PATH, 755)
-        self.driver = webdriver.Chrome(executable_path='C:\TestFiles\chromedriver.exe')
-        self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
-        self.driver.fullscreen_window()
-        self.driver.implicitly_wait(IMPLICITLY_WAIT)
+    def type_in_main_position(self, main_position):
+        self.field_send_keys(self.main_position_xpath, main_position)
 
-    def test_log_in_to_the_system(self):
-        user_login = LoginPage(self.driver)
-        user_login.title_of_the_page()
-        user_login.type_in_email('user01@getnada.com')
-        user_login.type_in_password('Test-1234')
-        user_login.click_on_button()
-        dashboard_page = Dashboard(self.driver)
-        dashboard_page.title_of_page()
-        time.sleep(5)
+    def click_submit_button(self):
+        self.click_on_the_element(self.submit_xpath)
 
-    @classmethod
-    def tearDown(self):
-        self.driver.quit()
+    def click_clear_button(self):
+        self.click_on_the_element(self.clear_xpath)
