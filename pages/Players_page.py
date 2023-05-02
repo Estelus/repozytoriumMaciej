@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 
-
+DRIVER_PATH = ('C:\TestFiles\chromedriver.exe')
 class PlayersPage (BasePage):
 
     players_page_url = 'https://scouts-test.futbolkolektyw.pl/en/players'

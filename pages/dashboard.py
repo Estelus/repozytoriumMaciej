@@ -1,39 +1,53 @@
-import time
-
-from selenium.webdriver.support.wait import WebDriverWait
 from pages.base_page import BasePage
 DRIVER_PATH = ('C:\TestFiles\chromedriver.exe')
-
 class Dashboard(BasePage):
-    scouts_panel_title_xpath = "//header/div/h6"
-    main_page_button_xpath = "//span[text()='Main page']//ancestor-or-self::div[@role='button']"
-    players_button_xpath = "//ul[1]/div[2]"
-    change_language_button_xpath = "//*/ul[2]/div[1]"
-    sign_out_button_xpath = "//span[text()='Sign out']//ancestor-or-self::div[@role='button']"
-    add_player_button_xpath = "//*[2][name() = 'a']/button"
-    add_player_xpath = "//*[@id='__next']/div[1]/main/div[3]/div[2]/div/div/a/button/span[1]"
-    dev_team_contact_button_xpath = "//a[@target='_blank']"
-    logo_scouts_panel_xpath = "//div[@title='Logo Scouts Panel']"
-    players_count_section_xpath = "//div[text()='Players count']/parent::div/parent::div"
-    matches_count_section_xpath = "// div[text() = 'Matches count'] / parent::div / parent::div"
-    reports_count_section_xpath = "//div[text()='Reports count']/parent::div/parent::div"
-    polish_language_xpath = "//*[text()='Polski']"
+    page_title_xpath = "//header//h6"
+    main_page_link_xpath = "//ul[1]//div[@role='button'][1]"
+    players_link_xpath = "//ul[1]//div[@role='button'][2]"
+    language_select_xpath = "//ul[2]//div[@role='button'][1]"
+    language_pl_selected_text = "English"
+    language_en_selected_text = "Polski"
+    sign_out_button_xpath = '//*[@id="__next"]/div[1]/div/div/div/ul[2]/div[2]/span'
+    players_count_panel_xpath = "//main/div[2]/div[1]/div"
+    players_count_label_xpath = "//main/div[2]/div[1]/div/div[1]"
+    players_count_value_xpath = "//main/div[2]/div[1]//b"
+    matches_count_panel_xpath = "//main/div[2]/div[2]/div"
+    matches_count_label_xpath = "//main/div[2]/div[2]/div/div[1]"
+    matches_count_value_xpath = "//main/div[2]/div[2]//b"
+    reports_count_panel_xpath = "//main/div[2]/div[3]/div"
+    reports_count_label_xpath = "//main/div[2]/div[3]/div/div[1]"
+    reports_count_value_xpath = "//main/div[2]/div[3]//b"
+    events_count_panel_xpath = "//main/div[2]/div[4]/div"
+    events_count_label_xpath = "//main/div[2]/div[4]/div/div[1]"
+    events_count_value_xpath = "//main/div[2]/div[4]//b"
+    scouts_panel_xpath = "//main/div[3]/div[1]/div"
+    scouts_logo_xpath = "//div[@title='Logo Scouts Panel']"
+    scouts_title_xpath = "//main/div[3]/div[1]//h2"
+    scouts_desc_xpath = "//h2//following-sibling::p"
+    scouts_dev_team_link_xpath = "//main/div[3]/div[1]//a"
+    shortcuts_panel_xpath = "//main/div[3]/div[2]/div"
+    shortcuts_title_xpath = "//main/div[3]/div[2]//h2"
+    shortcuts_add_player_button_xpath = "//*[@id='__next']/div[1]/main/div[3]/div[2]/div/div/a/button"
+    activity_panel_xpath = "//main/div[3]/div[3]/div"
+    activity_title_xpath = "//main/div[3]/div[3]//h2"
+    activity_last_created_player_link_xpath = "//h6[1]//following-sibling::a[1]"
+    activity_last_updated_player_link_xpath = "//h6[2]//following-sibling::a[1]"
+    activity_last_created_match_link_xpath = "//h6[3]//following-sibling::a[1]"
+    activity_last_updated_match_link_xpath = "//h6[4]//following-sibling::a[1]"
+    activity_last_updated_report_link_xpath = "//h6[5]//following-sibling::a[1]"
+    dashboard_page_url = "https://scouts-test.futbolkolektyw.pl/"
     expected_title = "Scouts panel"
-    dashboard_url = "https://scouts-test.futbolkolektyw.pl/"
+    futbool_kolektyw_button_xpath = "//*[@title ='Logo Scouts Panel']"
 
+    def title_of_the_page(self):
+        self.wait_for_element_to_be_clickable(self.main_page_link_xpath)
+        assert self.get_page_title(self.dashboard_page_url) == self.expected_title
 
+    def click_on_add_player(self):
+        self.click_on_the_element(self.shortcuts_add_player_button_xpath)
 
-    def title_of_page(self):
-        self.wait_for_element_to_be_clickable(self.main_page_button_xpath)
-        assert self.get_page_title(self.dashboard_url) == self.expected_title
-    def click_add_a_player_button(self):
-        self.click_on_the_element(self.add_player_xpath)
-
-    def click_sign_out_button(self):
+    def click_on_sign_out_button(self):
         self.click_on_the_element(self.sign_out_button_xpath)
 
-    def click_polish_button(self):
-        self.click_on_the_element(self.polish_language_xpath)
-
-    def click_players_button(self):
-        self.click_on_the_element(self.players_button_xpath)
+    def click_on_change_language(self):
+        self.click_on_the_element(self.language_select_xpath)
