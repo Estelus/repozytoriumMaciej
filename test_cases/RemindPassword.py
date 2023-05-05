@@ -7,7 +7,7 @@ from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 from selenium.webdriver.chrome.service import Service
 DRIVER_PATH = ('C:\TestFiles\chromedriver.exe')
 
-class TestSignOutFromSystem(unittest.TestCase):
+class TestRemindPassword(unittest.TestCase):
 
     @classmethod
     def setUp(self):
