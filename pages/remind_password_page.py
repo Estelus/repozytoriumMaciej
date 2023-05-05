@@ -1,3 +1,10 @@
+import os
+import unittest
+from selenium import webdriver
+from pages.login_page import LoginPage
+from pages.remind_password_page import RemindPasswordPage
+from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
+from selenium.webdriver.chrome.service import Service
 from pages.base_page import BasePage
 DRIVER_PATH = ('C:\TestFiles\chromedriver.exe')
 
@@ -11,5 +18,4 @@ class RemindPasswordPage(BasePage):
     expected_title = 'Remind password'
 
     def title_of_the_page(self):
-        self.wait_for_element_to_be_clickable(self.send_button_xpath)
-        assert self.driver.title == self.expected_title
+        assert self.get_page_title == self.expected_title

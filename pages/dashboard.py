@@ -7,7 +7,7 @@ class Dashboard(BasePage):
     language_select_xpath = "//ul[2]//div[@role='button'][1]"
     language_pl_selected_text = "English"
     language_en_selected_text = "Polski"
-    sign_out_button_xpath = '//*[@id="__next"]/div[1]/div/div/div/ul[2]/div[2]/span'
+    sign_out_button_xpath = '//*[@id="__next"]/div[1]/div/div/div/ul[2]/div[2]/div[2]'
     players_count_panel_xpath = "//main/div[2]/div[1]/div"
     players_count_label_xpath = "//main/div[2]/div[1]/div/div[1]"
     players_count_value_xpath = "//main/div[2]/div[1]//b"
