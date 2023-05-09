@@ -35,7 +35,7 @@ class Dashboard(BasePage):
     activity_last_created_match_link_xpath = "//h6[3]//following-sibling::a[1]"
     activity_last_updated_match_link_xpath = "//h6[4]//following-sibling::a[1]"
     activity_last_updated_report_link_xpath = "//h6[5]//following-sibling::a[1]"
-    dashboard_page_url = "https://scouts-test.futbolkolektyw.pl/"
+    dashboard_page_url = "https://scouts.futbolkolektyw.pl/en/"
     expected_title = "Scouts panel"
     futbool_kolektyw_button_xpath = "//*[@title ='Logo Scouts Panel']"
 

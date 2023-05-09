@@ -3,7 +3,7 @@ from pages.base_page import BasePage
 DRIVER_PATH = ('C:\TestFiles\chromedriver.exe')
 class PlayersPage (BasePage):
 
-    players_page_url = 'https://scouts-test.futbolkolektyw.pl/en/players'
+    players_page_url = 'https://scouts.futbolkolektyw.pl/en/players'
     download_csv_button_xpath = '//*[@title="Download CSV"]'
     print_button_xpath = '//*[@title="Print"]'
     view_columns_button_xpath = '//*[@title="View Columns"]'

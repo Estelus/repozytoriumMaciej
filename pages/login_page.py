@@ -12,7 +12,7 @@ class LoginPage(BasePage):
     sign_in_button_xpath = "//*[@type='submit']"
     remind_password_hyperlink_xpath = "//child::form//a"
     select_language_button_xpath = "//form//*[@role='button']"
-    login_page_url = "https://scouts-test.futbolkolektyw.pl/en/login?redirected=true"
+    login_page_url = "https://scouts.futbolkolektyw.pl/en/login?redirected=true"
     expected_title = 'Scouts panel - sign in'
 
     def type_in_email(self, email):
