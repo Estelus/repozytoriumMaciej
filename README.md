@@ -6,7 +6,7 @@ The ISTQB quiz went exceptionally well for me as I passed the ISTQB exam on Marc
 
 QUIZ ISTQB PURPUROWY- UDZIELONO ODPOWIEDZI DOBRZE NA 10 Z 14
 
-# <h3>ZADANIE 2: Selektory
+# <h3> Selektory
 #
 Scouts Panel:
 
